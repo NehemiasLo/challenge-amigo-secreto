@@ -72,3 +72,24 @@ function sortearAmigo() {
     
 }
 
+function mostrarResultados() {
+    let resultadosHTML = ""; // Se crea una variable para almacenar el HTML de los resultados
+    for (let amigo in asignaciones) { // Se recorren las asignaciones
+       
+        resultadosHTML += `<li class="result-item"> <span class="result-name">${amigo}</span> 
+        <span class="separator">:</span> <span class="amigo-secreto">${asignaciones[amigo]}</span> </li>`; // Se crea el HTML de cada asignación
+    }
+
+    let resultadoLista = document.getElementById('resultado'); // Se obtiene el elemento donde se mostrarán los resultados
+    resultadoLista.innerHTML = resultadosHTML; // Se asigna el HTML al elemento
+    resultadoLista.classList.add('mostar'); // Se agrega la clase para mostrar los resultados
+
+    listaAmigos = []; // Se reinicia el array de amigos
+    document.getElementById('lista-amigos').innerHTML = ''; // Se limpia la lista de amigos
+    refrescarBotonSortear(); // Se llama a la función que refresca el estado del botón de sortear
+
+    setTimeout(() => {
+        resultadoLista.scrollIntoView({ behavior: 'smooth' }); // Se hace scroll para mostrar los resultados
+    }, 100);
+
+}
