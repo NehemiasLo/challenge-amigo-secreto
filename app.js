@@ -2,12 +2,11 @@ let listaAmigos = []; // Se crea un array vacío para almacenar los amigos
 let asignaciones = {}; // Se crea un objeto vacío para almacenar las asignaciones
 
 
-
 function refrescarBotonSortear() {
-    let botonSortear = document.getElementById('button-sorteo'); 
+    let botonSortear = document.getElementById('button-draw'); 
     //botonSortear.disabled = listaAmigos.length < 2; // Se deshabilita el botón si la cantidad de amigos es menor a 2
     
-    if (listaAmigos.length < 2) { // Si la cantidad de amigos es menor a 2
+   if (listaAmigos.length < 2) { // Si la cantidad de amigos es menor a 2
         botonSortear.disabled = true; // Se deshabilita el botón de sortear
     } else { // Si la cantidad de amigos es mayor o igual a 2
         botonSortear.disabled = false; // Se habilita el botón de sortear
@@ -77,7 +76,7 @@ function mostrarResultados() {
 
     for (let amigo in asignaciones) { // Se recorren las asignaciones
        
-        resultadosHTML += `<li class="result-item"> <span class="result-name">${amigo}</span> 
+        resultadosHTML += `<li class="result-item"> <span class="amigo">${amigo}</span> 
         <span class="separator">:</span> <span class="amigo-secreto">${asignaciones[amigo]}</span> </li>`; // Se crea el HTML de cada asignación
     }
 
