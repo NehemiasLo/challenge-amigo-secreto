@@ -16,7 +16,7 @@ function refrescarBotonSortear() {
 function agregarAmigo() {
   let nombreAmigo = document.getElementById('amigo').value.trim(); // Se obtiene el valor del input
 
-    let regex = /^[a-zA-Z]+$/; // Se crea una expresión regular para validar que el nombre solo contenga letras
+    let regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/; // Se crea una expresión regular para validar que el nombre solo contenga letras
     if (nombreAmigo=='') { // Se valida que el input no esté vacío") {
         alert('Debes ingresar al menos un nombre');
         return;
